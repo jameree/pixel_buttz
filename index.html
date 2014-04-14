@@ -12,12 +12,14 @@
   </head>
   <body>
     <div id="container"></div>
+
     <script src="http://d3lp1msu2r81bx.cloudfront.net/kjs/js/lib/kinetic-v5.0.2.min.js"></script>
+
     <script defer="defer">
       var stage = new Kinetic.Stage({
         container: 'container',
         width: 500,
-        height: 500,
+        height: 500
       });
 
       var layer = new Kinetic.Layer();
@@ -31,11 +33,29 @@
         strokeWidth: 2
       });
 
+
       // add the shape to the layer
       layer.add(circle);
 
       // add the layer to the stage
       stage.add(layer);
+      window.addEventListener('keydown', function(e) {
+          if (e.keyCode == 37){
+              circle.setX(circle.getX() - 20);
+              console.log("left key down");
+              console.log("circlex = ", circle.getX());
+              stage.draw();
+              circle.draw();
+          }
+
+          if (e.keyCode == 39){
+              circle.setX(circle.getX() + 20);
+              console.log("right key down");
+              console.log("circlex = ", circle.getX());
+              stage.draw();
+              circle.draw();
+          }
+      });
     </script>
   </body>
 </html>

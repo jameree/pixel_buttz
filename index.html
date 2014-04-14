@@ -44,17 +44,15 @@
               circle.setX(circle.getX() - 20);
               console.log("left key down");
               console.log("circlex = ", circle.getX());
-              stage.draw();
-              circle.draw();
           }
 
           if (e.keyCode == 39){
               circle.setX(circle.getX() + 20);
               console.log("right key down");
               console.log("circlex = ", circle.getX());
-              stage.draw();
-              circle.draw();
           }
+
+          layer.draw();
       });
     </script>
   </body>
